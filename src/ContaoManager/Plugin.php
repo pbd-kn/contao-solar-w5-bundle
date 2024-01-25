@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PBDKN\FussballBundle\ContaoManager;
+namespace Pbdkn\SolarW5Bundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -9,7 +9,7 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use PBDKN\FussballBundle\FussballBundle;
+use Pbdkn\SolarW5Bundle\SolarW5Bundle;
 /**
  * Plugin for the Contao Manager.
  *
@@ -25,9 +25,8 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(FussballBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class])
-                ->setReplace(['fussball']),                
+            BundleConfig::create(SolarW5Bundle::class)
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
     /**

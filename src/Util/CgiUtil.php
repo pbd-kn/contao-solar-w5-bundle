@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace PBDKN\FussballBundle\Util;
+namespace Pbdkn\SolarW5Bundle\Util;
 
 class CgiUtil
 {

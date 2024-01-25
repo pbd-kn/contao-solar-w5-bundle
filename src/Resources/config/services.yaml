@@ -9,12 +9,14 @@ services:
             calls:
                 - [ setContainer, [ '@service_container' ] ]
 
-    PBDKN\FussballBundle\:
+    Pbdkn\SolarW5Bundle\:
         resource: ../../
         exclude: ../../{DependencyInjection,Resources,Model}
         
-    PBDKN\FussballBundle\Controller\ContentElement\WettbewerbController:
+    Pbdkn\SolarW5Bundle\Controller\ContentElement\FE\FeSolarTestController:
         tags:
-            - { name: container.service_subscriber }
+            - 
+                name: contao.content_element 
+                category: fe_solar_test_elements
         public: true
         

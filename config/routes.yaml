@@ -1,0 +1,3 @@
+contao-solar-w5-bundle.controller:
+    resource: "@Pbdkn/SolarW5Bundle/src/Controller"
+    type: annotation

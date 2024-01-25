@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace PBDKN\FussballBundle\DependencyInjection;
+namespace Pbdkn\SolarW5Bundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -15,14 +15,14 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  * muss die Dependency Injection Klasse "AjaxArticleExtension" lauten
  */
  
-class FussballExtension extends Extension
+class SolarW5Extension extends Extension
 {
     /**
      * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-        echo "PBD PBD dependencInjection Fussballbundle file FussballExtension load service";
+        //echo "PBD PBD dependencInjection SolarW5Bundle file SolarW5Extension load service";
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')

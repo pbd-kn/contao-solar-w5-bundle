@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/gallery-creator-bundle
  */
 
-namespace PBDKN\FussballBundle\Controller\ContentElement;
+namespace Pbdkn\SolarW5Bundle\Controller\ContentElement;
 use Contao\Config;
 use Contao\ContentModel;
 use Contao\Controller;
@@ -37,21 +37,13 @@ use Doctrine\DBAL\Driver\Exception as DoctrineDBALDriverException;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Exception as DoctrineDBALException;
 use Contao\Pagination;
-use PBDKN\FussballBundle\Util\CgiUtil;
-use PBDKN\FussballBundle\Util\FussballUtil;
-/*
-use Markocupic\GalleryCreatorBundle\Model\GalleryCreatorAlbumsModel;
-use Markocupic\GalleryCreatorBundle\Model\GalleryCreatorPicturesModel;
-use Markocupic\GalleryCreatorBundle\Util\AlbumUtil;
-use Markocupic\GalleryCreatorBundle\Util\MarkdownUtil;
-use Markocupic\GalleryCreatorBundle\Util\PictureUtil;
-use Markocupic\GalleryCreatorBundle\Util\SecurityUtil;
-vergl. auch AbstractGalleryCreator
-*/
-abstract class AbstractFussballController extends AbstractContentElementController
+use Pbdkn\SolarW5Bundle\Util\CgiUtil;
+use Pbdkn\SolarW5Bundle\Util\SolarUtil;
+
+abstract class AbstractSolarController extends AbstractContentElementController
 {
     protected CgiUtil $cgiUtil;
-    protected FussballUtil $fussballUtil;
+    protected SolarUtil $SolarUtil;
     protected Connection $connection;
     protected ScopeMatcher $scopeMatcher;
     protected ResponseContextAccessor $responseContextAccessor;
@@ -62,13 +54,14 @@ abstract class AbstractFussballController extends AbstractContentElementControll
     public function __construct(DependencyAggregate $dependencyAggregate)
     {
         $this->cgiUtil = $dependencyAggregate->cgiUtil;
-        $this->fussballUtil = $dependencyAggregate->fussballUtil;
+        $this->SolarUtil = $dependencyAggregate->SolarUtil;
         $this->connection = $dependencyAggregate->connection;
         $this->scopeMatcher = $dependencyAggregate->scopeMatcher;
         $this->responseContextAccessor = $dependencyAggregate->responseContextAccessor;
         $this->insertTagParser = $dependencyAggregate->insertTagParser;
         $this->htmlDecoder = $dependencyAggregate->htmlDecoder;
                 // akt Wettbewerb lesen.
+/*
         $stmt = $this->connection->executeQuery("SELECT * from hy_config WHERE Name='Wettbewerb' AND Aktuell = 1 LIMIT 1");
         $row = $stmt->fetchAssociative();
         $this->aktWettbewerb['id']=$row['ID'];
@@ -78,6 +71,7 @@ abstract class AbstractFussballController extends AbstractContentElementControll
         $this->aktWettbewerb['aktDGruppe']=$row['Value3'];
         $this->aktWettbewerb['aktStartdatum']=$row['Value4'];
         $this->aktWettbewerb['aktEndedatum']=$row['Value5'];
+*/
     }
 
 }

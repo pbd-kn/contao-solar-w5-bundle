@@ -1,6 +1,6 @@
 {
-	"name":"pbd-kn/fussball-bundle",
-	"description":"Bearbeitet das Fussball wetten Modell",
+	"name":"pbd-kn/contao-solar-w5-bundle",
+	"description":"Auswertung der Solar und Heizungsdaten W5",
 	"type":"contao-bundle",
 	"license":"LGPL-3.0-or-later",
 	"authors":[
@@ -11,12 +11,11 @@
 		}
 	],
 	"support":{
-		"issues":"https://github.com/pbd-kn/fussball-bundle/issues",
-		"source":"https://github.com/pbd-kn/fussball-bundle"
+		"issues":"https://github.com/pbd-kn/contao-solar-w5-bundle/issues",
+		"source":"https://github.com/pbd-kn/contao-solar-w5-bundle"
 	},
 	"require":{
 		"php": ">=5.6.0",
-		"contao/core-bundle": ">=4.4.4,<5.0",
 		"contao/easy-coding-standard": "^6.6"
 	},
 	"conflict": {
@@ -25,10 +24,10 @@
 	},
 	"autoload":{
 			"psr-4": {
-					"PBDKN\\FussballBundle\\": "src/"
+					"Pbdkn\\SolarW5Bundle\\": "src/"
 		}
 	},
 	"extra":{
-		"contao-manager-plugin": "PBDKN\\FussballBundle\\ContaoManager\\Plugin"
+		"contao-manager-plugin": "Pbdkn\\SolarW5Bundle\\ContaoManager\\Plugin"
 	}
 }

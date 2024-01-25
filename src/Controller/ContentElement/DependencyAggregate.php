@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/gallery-creator-bundle
  */
 
-namespace PBDKN\FussballBundle\Controller\ContentElement;
+namespace Pbdkn\SolarW5Bundle\Controller\ContentElement;
 
 use Contao\CoreBundle\InsertTag\InsertTagParser;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -20,8 +20,8 @@ use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Contao\CoreBundle\String\HtmlDecoder;
 use Doctrine\DBAL\Connection;
-use PBDKN\FussballBundle\Util\CgiUtil;
-use PBDKN\FussballBundle\Util\FussballUtil;
+use Pbdkn\SolarW5Bundle\Util\CgiUtil;
+use Pbdkn\SolarW5Bundle\Util\SolarUtil;
 
 final class DependencyAggregate
 {
@@ -32,7 +32,7 @@ final class DependencyAggregate
     public HtmlDecoder $htmlDecoder;
     public TranslatorInterface $translator;
     public CgiUtil $cgiUtil;
-    public FussballUtil $fussballUtil;
+    public SolarUtil $SolarUtil;
  
     public function __construct(
       Connection $connection, 
@@ -42,11 +42,11 @@ final class DependencyAggregate
       HtmlDecoder $htmlDecoder,
       TranslatorInterface $translator,
       CgiUtil $cgiUtil,
-      FussballUtil $fussballUtil
+      SolarUtil $SolarUtil
       )
     {
         $this->cgiUtil = $cgiUtil;
-        $this->fussballUtil = $fussballUtil;
+        $this->SolarUtil = $SolarUtil;
         $this->connection = $connection;
         $this->scopeMatcher = $scopeMatcher;
         $this->responseContextAccessor = $responseContextAccessor;

@@ -1,4 +1,4 @@
 # config/routes.yaml
-pbdkn_fussball.controller:
+pbdkn_solarw5.controller:
     resource: ../../Controller
     type: annotation
